@@ -480,7 +480,8 @@ int main() {
                     // The decelerating rate is almost double the acceleration rate to avoid some collision scenarios
                     // happened in the traffic jam and also not too large to guarantee the jerk minimization.
                     // This value was tested multiple times on the simulator and the car drove safely for more than 7 miles.
-                    ref_vel -= 0.5;
+                    // The deceleration with rate more than 0.224 will cause jerk and acceleration thresholds to be exceeded
+                    ref_vel -= 0.2;
 
                   }
 

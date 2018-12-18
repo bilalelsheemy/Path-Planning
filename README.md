@@ -40,9 +40,9 @@ In order to achieve this a rough path was initially created based on the smooth 
 
 ### Jerk & Acceleration Minimizing
 To guarantee the acceleration & jerk to be under the required thresholds 10m/s^2, 10m/s^3 a soft start was forced at the beginning of the vehicle accelerating and in any other instance when the ego vehicle is required to accelerate or decelerate according to the surrounding traffic. 
-The speed incremental/decrement value was tuned multiple times started from (0.224 mph) till (0.5 mph) which causes a maximum acc of not more than 5 m/s^2 at the beginning of movement from the rest. 
-The decelerating rate is almost double the acceleration rate to avoid some collision scenarios happened in the traffic jam and also not too large to guarantee the jerk minimization.
-This value was tested multiple times on the simulator and the car drove safely for more than 7 miles.
+The speed incremental/decrement value was tuned multiple times started from (0.1 mph) till (0.224 mph) which was found to be on the fence of the range which will not cause acceleration or jerk more than 10 m/s^2 or 10 m/s^3.
+Accordingly the maximum acceleration was set to 0.224 and the max deceleration  was set to -0.2 based on multiple tunings on the simulator.
+
 
 ### Future Improvements
 The pipeline is flexible for any further optimizations.
